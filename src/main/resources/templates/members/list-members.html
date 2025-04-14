@@ -72,29 +72,33 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Action</th>
+                        <th sec:authorize="hasRole('MANAGER') or hasRole('ADMIN')">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="tempMember : ${members}">
                         <td>
-                            <img th:src="${tempMember.photo != null ? tempMember.photo : '/images/default.png'}" alt="No Photo" class="img-thumbnail" style="width: 50px; height: 50px;">
-                            <form th:action="@{/members/uploadPhoto}" method="POST" enctype="multipart/form-data">
-                                <input type="file" name="photo" accept="image/*" class="form-control-file mt-2">
-                                <input type="hidden" name="memberId" th:value="${tempMember.id}">
-                                <button type="submit" class="btn btn-outline-primary btn-sm mt-2">Upload</button>
-                            </form>
+                            <input type="submit" value="Upload" class="btn btn-outline-primary btn-sm"/>
                         </td>
                         <td th:text="${tempMember.firstName}"></td>
                         <td th:text="${tempMember.lastName}"></td>
                         <td th:text="${tempMember.email}"></td>
-                        <td>
-                            <a th:href="@{/members/showFormForUpdate(memberId=${tempMember.id})}" class="btn btn-info btn-sm">Update</a>
-                            <a th:href="@{/members/delete(memberId=${tempMember.id})}" class="btn btn-danger btn-sm"
-                               onclick="return confirm('Are you sure you want to delete this member?')">Delete</a>
+                        <td sec:authorize="hasRole('MANAGER') or hasRole('ADMIN')">
+                            <div class="d-flex gap-2">
+                                <!-- Update button for MANAGER -->
+                                <div sec:authorize="hasRole('MANAGER')">
+                                    <a th:href="@{/members/showFormForUpdate(memberId=${tempMember.id})}"
+                                       class="btn btn-info btn-sm">Update</a>
+                                </div>
+                                <!-- Delete button for ADMIN -->
+                                <div sec:authorize="hasRole('ADMIN')">
+                                    <a th:href="@{/members/delete(memberId=${tempMember.id})}"
+                                       class="btn btn-danger btn-sm"
+                                       onclick="return confirm('Are you sure you want to delete this member?')">Delete</a>
+                                </div>
+                            </div>
                         </td>
                     </tr>
-
                     </tbody>
                 </table>
             </div>

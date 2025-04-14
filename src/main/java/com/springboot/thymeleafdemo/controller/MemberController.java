@@ -5,10 +5,7 @@ import com.springboot.thymeleafdemo.service.MemberService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -57,52 +54,15 @@ public class MemberController {
     }
 
     @PostMapping("/save")
-    public String saveMember(@ModelAttribute("member") Member theMember, @RequestParam("photo") MultipartFile photo) {
-        if (!photo.isEmpty()) {
-            String fileName = System.currentTimeMillis() + "_" + photo.getOriginalFilename();
-            try {
-                String uploadDir = "uploads/";
-                File uploadPath = new File(uploadDir);
-                if (!uploadPath.exists()) {
-                    uploadPath.mkdirs();
-                }
-                File dest = new File(uploadDir + fileName);
-                photo.transferTo(dest);
-                theMember.setPhoto("/" + uploadDir + fileName);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    public String saveMember(@ModelAttribute("member") Member theMember) {
+
         memberService.save(theMember);
         return "redirect:/members/list";
     }
 
-
     @GetMapping("/delete")
     public String delete(@RequestParam("memberId") int theId) {
         memberService.deleteById(theId);
-        return "redirect:/members/list";
-    }
-
-    @PostMapping("/uploadPhoto")
-    public String uploadPhoto(@RequestParam("memberId") int memberId, @RequestParam("photo") MultipartFile photo) {
-        if (!photo.isEmpty()) {
-            String fileName = System.currentTimeMillis() + "_" + photo.getOriginalFilename();
-            try {
-                String uploadDir = "uploads/";
-                File uploadPath = new File(uploadDir);
-                if (!uploadPath.exists()) {
-                    uploadPath.mkdirs();
-                }
-                File dest = new File(uploadDir + fileName);
-                photo.transferTo(dest);
-                Member theMember = memberService.findById(memberId);
-                theMember.setPhoto("/" + uploadDir + fileName);
-                memberService.save(theMember);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
         return "redirect:/members/list";
     }
 

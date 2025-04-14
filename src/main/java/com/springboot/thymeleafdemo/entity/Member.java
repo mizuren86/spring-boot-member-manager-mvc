@@ -12,6 +12,14 @@ public class Member {
     @Column(name="id")
     private int id;
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     @Column(name = "photo")
     private String photo;
 
@@ -69,15 +77,6 @@ public class Member {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
 
     // define toString
     @Override

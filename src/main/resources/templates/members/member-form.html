@@ -17,16 +17,13 @@
     <h3>Member Directory</h3>
     <hr>
     <p class="h4 mb-4">Save Member</p>
-    <form action="#" th:action="@{/members/save}" th:object="${member}" method="POST" enctype="multipart/form-data">
+    <form action="#" th:action="@{/members/save}" th:object="${member}" method="POST">
         <input type="hidden" th:field="*{id}">
         <input type="text" th:field="*{firstName}" class="form-control mb-4 w-25" placeholder="First name">
         <input type="text" th:field="*{lastName}" class="form-control mb-4 w-25" placeholder="Last name">
         <input type="text" th:field="*{email}" class="form-control mb-4 w-25" placeholder="Email">
-        <label for="photo">Photo:</label>
-        <input type="file" id="photo" name="photo" accept="image/*" class="form-control mb-4 w-25">
         <button type="submit" class="btn btn-info col-2">Save</button>
     </form>
-
 
     <hr>
     <a th:href="@{/members/list}">Back to Members List</a>

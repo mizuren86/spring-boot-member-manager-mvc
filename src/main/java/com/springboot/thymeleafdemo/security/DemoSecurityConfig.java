@@ -26,11 +26,6 @@ public class DemoSecurityConfig {
         return jdbcUserDetailsManager;
     }
 
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -68,33 +63,6 @@ public class DemoSecurityConfig {
 
         return http.build();
     }
-
-    /*
-    @Bean
-    public InMemoryUserDetailsManager userDetailsManager() {
-
-        UserDetails soyo = User.builder()
-                .username("soyo")
-                .password("{noop}test123")
-                .roles("MEMBER")
-                .build();
-
-        UserDetails rikki = User.builder()
-                .username("rikki")
-                .password("{noop}test123")
-                .roles("MEMBER", "MANAGER")
-                .build();
-
-        UserDetails sakiko = User.builder()
-                .username("sakiko")
-                .password("{noop}fun123")
-                .roles("MEMBER", "MANAGER", "ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(soyo, rikki, sakiko);
-
-    }
-    */
 
 }
 

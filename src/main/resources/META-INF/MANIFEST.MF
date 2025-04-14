@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Main-Class: com.springboot.thymeleafdemo.ThymeleafdemoApplication
+Class-Path: spring-security-web-6.4.2.jar spring-boot-starter-logging-3.
+ 4.1.jar spring-aop-6.2.1.jar mssql-jdbc-12.8.1.jre11.jar thymeleaf-extr
+ as-springsecurity6-3.1.3.RELEASE.jar spring-security-core-6.4.2.jar jac
+ kson-module-parameter-names-2.18.2.jar hibernate-core-6.6.4.Final.jar s
+ pring-boot-starter-web-3.4.1.jar micrometer-observation-1.14.2.jar micr
+ ometer-commons-1.14.2.jar logback-classic-1.5.12.jar jandex-3.2.0.jar a
+ ntlr4-runtime-4.13.0.jar jakarta.annotation-api-2.1.1.jar spring-securi
+ ty-crypto-6.4.2.jar logback-core-1.5.12.jar spring-data-commons-3.4.1.j
+ ar jakarta.xml.bind-api-4.0.2.jar jackson-datatype-jsr310-2.18.2.jar by
+ te-buddy-1.15.11.jar txw2-4.0.5.jar jackson-databind-2.18.2.jar spring-
+ boot-starter-security-3.4.1.jar spring-boot-starter-data-jpa-3.4.1.jar 
+ spring-boot-3.4.1.jar spring-boot-starter-jdbc-3.4.1.jar log4j-to-slf4j
+ -2.24.3.jar spring-tx-6.2.1.jar HikariCP-5.1.0.jar jboss-logging-3.6.1.
+ Final.jar spring-boot-starter-tomcat-3.4.1.jar tomcat-embed-core-10.1.3
+ 4.jar jaxb-core-4.0.5.jar spring-data-jpa-3.4.1.jar spring-security-con
+ fig-6.4.2.jar unbescape-1.1.6.RELEASE.jar spring-context-6.2.1.jar jaka
+ rta.activation-api-2.1.3.jar spring-beans-6.2.1.jar jakarta.transaction
+ -api-2.0.1.jar spring-webmvc-6.2.1.jar tomcat-embed-el-10.1.34.jar thym
+ eleaf-3.1.3.RELEASE.jar istack-commons-runtime-4.1.2.jar snakeyaml-2.3.
+ jar jul-to-slf4j-2.0.16.jar spring-boot-autoconfigure-3.4.1.jar spring-
+ aspects-6.2.1.jar spring-expression-6.2.1.jar classmate-1.7.0.jar jaxb-
+ runtime-4.0.5.jar spring-jdbc-6.2.1.jar hibernate-commons-annotations-7
+ .0.3.Final.jar angus-activation-2.0.2.jar spring-orm-6.2.1.jar spring-b
+ oot-starter-json-3.4.1.jar thymeleaf-spring6-3.1.3.RELEASE.jar jackson-
+ core-2.18.2.jar spring-jcl-6.2.1.jar attoparser-2.0.7.RELEASE.jar sprin
+ g-web-6.2.1.jar slf4j-api-2.0.16.jar mysql-connector-j-9.1.0.jar spring
+ -boot-starter-thymeleaf-3.4.1.jar spring-core-6.2.1.jar jakarta.persist
+ ence-api-3.1.0.jar tomcat-embed-websocket-10.1.34.jar spring-boot-start
+ er-3.4.1.jar spring-boot-devtools-3.4.1.jar log4j-api-2.24.3.jar aspect
+ jweaver-1.9.22.1.jar jakarta.inject-api-2.0.1.jar jackson-annotations-2
+ .18.2.jar jackson-datatype-jdk8-2.18.2.jar
+
